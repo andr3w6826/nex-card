@@ -1,0 +1,30 @@
+{
+    "schema_version": "v1",
+  
+    "card_purpose": "Travel",
+    "current_issuers": ["Chase", "Amex"],
+    "credit_score": 740,
+    "credit_age_years": 3,
+  
+    "dom_int": "International",
+  
+    "airline_loyalty": ["Southwest", "Delta"],
+    "aloyalty_quan": [1, 3],
+  
+    "hotel_loyalty": ["Hyatt"],
+    "hloyalty_quan": [2],
+  
+    "amt_effort": "Love deals",
+  
+    "spend": {
+      "groceries": 250,
+      "dining": 300,
+      "gas": 80,
+      "travel_airfare": 150,
+      "travel_hotels": 120,
+      "rideshare": 40,
+      "streaming": 15,
+      "rent": 900
+    }
+  }
+  
