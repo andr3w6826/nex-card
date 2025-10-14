@@ -2,11 +2,8 @@
     "Andrew Chen": {
         "expenditure": "12000",
         "food_expend": "4000",
-        "travel_expend": "2000"
-    },
-    "Jeremiah Tan": {
-        "expenditure": "20000",
-        "food_expend": "5000",
-        "travel_expend": "1000"
+        "travel_expend": "2000", 
+        "credit_score": 740,
+        "credit_age":  3
     }
 }
