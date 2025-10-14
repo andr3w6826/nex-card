@@ -1,0 +1,11 @@
+{
+    "Chase Sapphire Preferred": {
+        "issuer": "Chase",
+        "annual_fee": 95,
+        "purpose": "Travel",
+        "min_credit_score": 690,
+        "min_credit_age": 1,
+
+        "good_airlines": ['Southwest', 'United']
+    }
+}

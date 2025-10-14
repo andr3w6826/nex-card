@@ -1,0 +1,32 @@
+Documentation for Card Profiles
+
+
+Issuer:
+    - Chase, American Express, Bank of America, Wells Fargo, Citi
+
+
+Annual Fee:
+    - The cost to hold the card annually
+
+Len Relationship:
+    - Prior relationship refers to a customer’s existing or 
+    historical banking relationship with the issuing institution,
+    including checking/savings accounts, loans, or previous credit cards,
+    that helps the issuer gauge trust, loyalty, and risk.
+    - In this case, a recommended length of time (years)
+
+Purpose:
+    - Whether the card functions as cashback, travel, or 0% APR.
+    - Was thinking some cards could classify under multiple categories or be stronger in certain ones and how to quantify that
+
+Min_credit_score:
+    - Minimum recommended credit score to be approved. 
+
+Min_credit_age:
+    - Credit age refers to the age of the oldest active account
+     on a person’s credit report.usually expressed in years since that account was opened.
+    - This would be minimum recommended credit age to be approved for a particular card
+
+
+Good_airlines:
+    - Some transfer partners that the card is known for. Not a complete list but generally the most desired ones

@@ -15,7 +15,7 @@ Personal Profile
     - e.g. 700-720, 721 - 740, etc.
 
 3. What is your credit age (in years)
-    - e.g 0.5, 1, 1.5
+    - e.g 0, 0.5, 1, 1.5
 
 Travel Profile
 
