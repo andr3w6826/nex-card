@@ -7,5 +7,16 @@
         "min_credit_score": 690,
         "min_credit_age": 1,
         "good_airlines": ["Southwest", "United"]
+    },
+
+    "Chase Freedom Unlimiteed": {
+        "issuer": "Chase",
+        "annual_fee": 0,
+        "len_relationship": 0,
+        "purpose": "Cashback",
+        "min_credit_score": 670,
+        "min_credit_age": 1,
+        "good_airlines": ["Southwest", "United"]
     }
 }
+
