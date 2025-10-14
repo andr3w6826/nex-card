@@ -1,2 +1,3 @@
 .andrew_test.ipynb
 .users.json
+dist/*.json
