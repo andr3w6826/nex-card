@@ -7,12 +7,40 @@
 
 Personal Profile 
 
-2. What issuers do you currently have
+1. What issuers do you currently have
     e.g. Chase, Bank of America, Wells Fargo, etc.
 
-3. What is your credit score
+2. What is your credit score
     - Was hoping to bucket it
     - e.g. 700-720, 721 - 740, etc.
 
-4. What is your credit age (in years)
+3. What is your credit age (in years)
     - e.g 0.5, 1, 1.5
+
+Travel Profile
+
+1. Are you more focused on domestic or international
+    e.g. Domestic, International, both
+
+2. Do you have particular preferances and loyalties to airlines
+
+    - Also need to measure how "strong" a preference. For example, if someone only takes United
+    - Maybe a range of numbers? From preference -> diehard
+    e.g. (AA, 1), (Southwest, 2)
+
+3. Same question as above but for Hotel chains
+    - chains include Hyatt, Marriott, Hiltlon
+
+4. How much work are you willing to put into redemptions?
+    - Theres a trade off between better multipliers and ease of redemptions
+    - Can look on partner airlines for better deals but you have to put in work
+
+    - e.g. "I love looking for deals", "The most work I'm going to do is browse AA.com"
+
+Spending Categories
+
+    - Monthly Spend in:
+        - Dining: 500
+        - Grociers: 200
+        - Rent: 600
+        - Hotels: (need to make a distinction between hyatt.com and booking hyatt on Expedia or something)
