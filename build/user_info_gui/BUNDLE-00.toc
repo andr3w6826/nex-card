@@ -1,3 +1,0 @@
-([('user_info_gui',
-   '/Users/jeremiahtan/nex-card/dist/user_info_gui',
-   'EXECUTABLE')],)
