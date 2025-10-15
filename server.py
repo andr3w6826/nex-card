@@ -1,8 +1,9 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import sqlite3
+import os
 
-app=Flask(__name__)
+app=Flask(__name__, static_folder='static')
 CORS(app)
 
 # -- DB Help --
@@ -35,6 +36,10 @@ def init_db():
     conn.close()
 
 # -- ROUTES --
+@app.route('/')
+def serve_index():
+    return send_from_directory(app.static_folder, 'index.html')
+
 @app.route("/add_user", methods=["POST"])
 def add_user():
     data = request.json
@@ -72,4 +77,5 @@ def get_users():
 
 if __name__ == "__main__":
     init_db()
-    app.run(host="0.0.0.0", port=6969)
+    port = int(os.environ.get("PORT", 6969))
+    app.run(host="0.0.0.0", port=port)
