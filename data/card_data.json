@@ -3,8 +3,6 @@
         "issuer": "Chase",
         "annual_fee": 95,
         "purpose": "Travel",
-        "min_credit_score": 690,
-        "min_credit_age": 1,
 
         "good_airlines": ["Southwest", "United"],
 
@@ -16,7 +14,27 @@
             "Travel": 2,
             "Other": 1
         }
+    },
 
+    "American Express Gold Card": {
+        "issuer": "American Express",
+        "annual_fee": 325,
+        "purpose": "Travel",
 
+        "good_airlines": ["Delta"],
+
+        "spending_categories": {
+        
+            "Dining": 4,
+            "Grocery": 4,
+
+            "AmexTravel Flights": 3,
+            "Flights": 3,
+
+            "AmexTravel": 2,
+            "AmexTravel Hotels (Prepaid)": 2,
+
+            "Other": 1
+        }
     }
 }
