@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Item Manager</title>
+</head>
+<body>
+  <h2>Add User</h2>
+  <input id="user_name" placeholder="Name">
+  <input id="user_expend" placeholder="Expenditures">
+  <input id="food_expend" placeholder="Food Expenses">
+  <input id="travel_expend" placeholder="Travel Expenses">
+  <button onclick="addUser()">Submit</button>
+
+  <h2>Add Item</h2>
+  <input id="card_name" placeholder="Card Name">
+  <input id="issuer" placeholder="Card Issuer">
+  <input id="annual_fee" placeholder="Annual Fee">
+  <input id="purpose" placeholder="Purpose">
+  <button onclick="addCard()">Add</button>
+
+  <h2>All Items</h2>
+  <button onclick="loadCards()">Refresh</button>
+  <ul id="card_list"></ul>
+
+<script>
+const API = "http://127.0.0.1:6969";  // will update after deployment
+
+async function addUser() {
+  const name = document.getElementById('user_name').value;
+  const expenditures = document.getElementById('user_expend').value;
+  const food_expend = document.getElementById('food_expend').value;
+  const travel_expend = document.getElementById('travel_expend').value;
+  await fetch(`${API}/add_user`, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({name, expenditures, food_expend, travel_expend})
+  });
+  alert('User added!');
+}
+
+async function addCard() {
+  const card_name = document.getElementById('card_name').value;
+  const issuer = document.getElementById('issuer').value;
+  const annual_fee = document.getElementById('annual_fee').value;
+  const purpose = document.getElementById('purpose').value;
+  await fetch(`${API}/add_card`, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({card_name, issuer, annual_fee, purpose})
+  });
+  alert('Item added!');
+}
+
+async function loadCards() {
+  const res = await fetch(`${API}/cards`);
+  const cards = await res.json();
+  const list = document.getElementById('card_list');
+  list.innerHTML = '';
+  cards.forEach(i => {
+    const li = document.createElement('li');
+    li.textContent = `${i.issuer} ${i.name}, $${i.annual_fee}, ${i.purpose}`;
+    list.appendChild(li);
+  });
+}
+</script>
+</body>
+</html>
