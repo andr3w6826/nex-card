@@ -6,6 +6,17 @@
         "min_credit_score": 690,
         "min_credit_age": 1,
 
-        "good_airlines": ["Southwest", "United"]
+        "good_airlines": ["Southwest", "United"],
+
+        "spending_categories": {
+            "Chase Travel": 5,
+            "Dining": 3,
+            "Online_Grocery": 3,
+            "Streaming": 3,
+            "Travel": 2,
+            "Other": 1
+        }
+
+
     }
 }
