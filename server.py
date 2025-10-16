@@ -75,9 +75,20 @@ def get_cards():
         cur = conn.cursor()
         cur.execute("SELECT * from cards")
         rows = cur.fetchall()
+        
+        cards = []
+        for row in rows:
+            cards.append({
+                "id": row[0],
+                "name": row[1],
+                "issuer": row[2],
+                "annual_fee": row[3],
+                "purpose": row[4]
+            })
+
         cur.close()
         conn.close()
-        return jsonify(rows)
+        return jsonify(cards), 200
     except Exception as e:
         print("Error fetching cards:", e)
         return jsonify({'error': str(e)}), 500
@@ -90,9 +101,20 @@ def get_users():
         cur = conn.cursor()
         cur.execute("SELECT * from users")
         rows = cur.fetchall()
+        
+        users = []
+        for row in rows:
+            users.append({
+                "id": row[0],
+                "name": row[1],
+                "user_expend": row[2],
+                "food_expend": row[3],
+                "travel_expend": row[4]
+            })
+
         cur.close()
         conn.close()
-        return jsonify(rows)
+        return jsonify(users), 200
     except Exception as e:
         print("Error fetching users:", e)
         return jsonify({'error': str(e)}), 500
