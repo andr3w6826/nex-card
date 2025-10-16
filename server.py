@@ -73,7 +73,8 @@ def get_cards():
     try:
         conn = get_db()
         cur = conn.cursor()
-        rows = cur.execute("SELECT * from cards").fetchall()
+        cur.execute("SELECT * from cards")
+        rows = cur.fetchall()
         cur.close()
         conn.close()
         return jsonify(rows)
@@ -87,7 +88,8 @@ def get_users():
     try:
         conn = get_db()
         cur = conn.cursor()
-        rows = cur.execute("SELECT * from users").fetchall()
+        cur.execute("SELECT * from users")
+        rows = cur.fetchall()
         cur.close()
         conn.close()
         return jsonify(rows)
