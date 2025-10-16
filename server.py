@@ -70,22 +70,30 @@ def add_card():
 
 @app.route("/cards", methods=["GET"])
 def get_cards():
-    conn = get_db()
-    cur = conn.cursor()
-    rows = cur.execute("SELECT * from cards").fetchall()
-    cur.close()
-    conn.close()
-    return jsonify([dict(r) for r in rows])
+    try:
+        conn = get_db()
+        cur = conn.cursor()
+        rows = cur.execute("SELECT * from cards").fetchall()
+        cur.close()
+        conn.close()
+        return jsonify(rows)
+    except Exception as e:
+        print("Error fetching cards:", e)
+        return jsonify({'error': str(e)}), 500
 
 
 @app.route("/users", methods=["GET"])
 def get_users():
-    conn = get_db()
-    cur = conn.cursor()
-    rows = cur.execute("SELECT * from users").fetchall()
-    cur.close()
-    conn.close()
-    return jsonify([dict(r) for r in rows])
+    try:
+        conn = get_db()
+        cur = conn.cursor()
+        rows = cur.execute("SELECT * from users").fetchall()
+        cur.close()
+        conn.close()
+        return jsonify(rows)
+    except Exception as e:
+        print("Error fetching users:", e)
+        return jsonify({'error': str(e)}), 500
 
 if __name__ == "__main__":
     init_db()
