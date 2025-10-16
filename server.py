@@ -47,7 +47,7 @@ def serve_index():
 def add_user():
     data = request.json
     conn = get_db()
-    cur = conn.cursor
+    cur = conn.cursor()
     cur.execute("INSERT INTO users (name, expenditures, food_expend, travel_expend) VALUES (?, ?, ?, ?)",
                  (data["name"], float(data["expenditures"]), float(data["food_expend"]), float(data["travel_expend"])))
     conn.commit()
@@ -59,7 +59,7 @@ def add_user():
 def add_card():
     data = request.json
     conn = get_db()
-    cur = conn.cursor
+    cur = conn.cursor()
     cur.execute("INSERT INTO cards (name, issuer, annual_fee, purpose) VALUES (?, ?, ?, ?)",
                 (data["card_name"], data["issuer"], float(data["annual_fee"]), data["purpose"]))
     conn.commit()
@@ -70,7 +70,7 @@ def add_card():
 @app.route("/cards", methods=["GET"])
 def get_cards():
     conn = get_db()
-    cur = conn.cursor
+    cur = conn.cursor()
     rows = cur.execute("SELECT * from cards").fetchall()
     cur.close()
     conn.close()
@@ -80,7 +80,7 @@ def get_cards():
 @app.route("/users", methods=["GET"])
 def get_users():
     conn = get_db()
-    cur = conn.cursor
+    cur = conn.cursor()
     rows = cur.execute("SELECT * from users").fetchall()
     cur.close()
     conn.close()
