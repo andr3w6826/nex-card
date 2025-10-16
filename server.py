@@ -48,8 +48,8 @@ def add_user():
     data = request.json
     conn = get_db()
     cur = conn.cursor()
-    cur.execute("INSERT INTO users (name, expenditures, food_expend, travel_expend) VALUES (?, ?, ?, ?)",
-                 (data["name"], float(data["expenditures"]), float(data["food_expend"]), float(data["travel_expend"])))
+    cur.execute("INSERT INTO users (name, expenditures, food_expend, travel_expend) VALUES (%s, %s, %s, %s)",
+                 (data["name"], data["expenditures"], data["food_expend"], data["travel_expend"]))
     conn.commit()
     cur.close()
     conn.close()
@@ -60,8 +60,8 @@ def add_card():
     data = request.json
     conn = get_db()
     cur = conn.cursor()
-    cur.execute("INSERT INTO cards (name, issuer, annual_fee, purpose) VALUES (?, ?, ?, ?)",
-                (data["card_name"], data["issuer"], float(data["annual_fee"]), data["purpose"]))
+    cur.execute("INSERT INTO cards (name, issuer, annual_fee, purpose) VALUES (%s, %s, %s, %s)",
+                (data["card_name"], data["issuer"], data["annual_fee"], data["purpose"]))
     conn.commit()
     cur.close()
     conn.close()
