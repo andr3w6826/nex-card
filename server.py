@@ -6,7 +6,7 @@ import psycopg2
 
 app=Flask(__name__, static_folder='static')
 CORS(app)
-DATABASE_URL = os.getenv('postgresql://nex_card_db_user:fPc36KsCZG4LwCJ4YPhE9K582Sb7DoIS@dpg-d3oaiau3jp1c73bqld90-a/nex_card_db')
+DATABASE_URL = os.getenv('DATABASE_URL')
 
 # -- DB Help --
 def get_db():
