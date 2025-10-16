@@ -1,0 +1,20 @@
+{
+    "Andrew": {"credit_score": "740",
+    "credit_age": "2",
+    "spending_categories": {"monthly_dining": 600,
+     "monthly_groceries": 100,
+     "monthly_gas": 0,
+     "monthly_streaming": 7,
+     "monthly_online_shopping": 12,
+     "monthly_other": 200,
+
+
+     "monthly_travel": 10,
+     "monthly_hotel": 5,
+     "monthly_hotel_portal": 6,
+     "monthly_flights": 7,
+     "monthly_flights_portal": 8,
+     "monthly_car_rental": 9,
+     "monthly_car_rental_portal": 10}
+    }
+}
