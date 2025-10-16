@@ -18,7 +18,7 @@ def init_db():
     cur = conn.cursor()
     cur.execute("""
         CREATE TABLE IF NOT EXISTS users (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            id SERIAL PRIMARY KEY,
             name TEXT,
             expenditures REAL,
             food_expend REAL,
@@ -27,8 +27,8 @@ def init_db():
     """)
     cur.execute("""
         CREATE TABLE IF NOT EXISTS cards (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name TEXT,
+            id SERIAL PRIMARY KEY,
+            name TEXT NOT NULL,
             issuer TEXT,
             annual_fee REAL,
             purpose TEXT
@@ -38,7 +38,6 @@ def init_db():
     cur.close()
     conn.close()
 init_db()
-
 
 # -- ROUTES --
 @app.route('/')
