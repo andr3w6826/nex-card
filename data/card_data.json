@@ -2,6 +2,7 @@
     "Chase Sapphire Preferred": {
         "issuer": "Chase",
         "annual_fee": 95,
+        "earning_style": "points",
         "purpose": "Travel",
 
         "good_airlines": ["Southwest", "United"],
@@ -19,6 +20,7 @@
     "American Express Gold Card": {
         "issuer": "American Express",
         "annual_fee": 325,
+        "earning_style": "points", 
         "purpose": "Travel",
 
         "good_airlines": ["Delta"],
@@ -36,5 +38,39 @@
 
             "Other": 1
         }
+    },
+
+    "Chase Freedom Unlimited": {
+        "issuer": "Chase",
+        "annual_fee": 0,
+        "earning_style": "points",
+        "purpose": "General",
+
+        "good_airlines": [],
+
+        "spending_categories": {
+            "Chase Travel": 5,
+            "Dining": 3,
+            "Drugstore": 3,
+            "Other": 1.5
+        }
+    },
+
+    "Capital One Savor": {
+        "issuer": "Capital One",
+        "annual_fee": 0,
+        "earning_style": "percent",
+        "purpose": "Cashback",
+
+        "good_airlines": [],
+
+        "spending_categories": {
+            "Capital One Travel - Hotels": 5,
+            "Capital One Travel - Car Rentals" : 5,
+            "Dining": 3,
+            "Grocery": 3,
+            "Other": 1
+        }
     }
+
 }
