@@ -16,6 +16,8 @@
      "monthly_flights": 7,
      "monthly_flights_portal": 8,
      "monthly_car_rental": 9,
-     "monthly_car_rental_portal": 10}
+     "monthly_car_rental_portal": 10},
+
+    "credits": ["Doordash", "Resy", "Travel", "TSA_Precheck_Global_Entry"]
     }
 }
