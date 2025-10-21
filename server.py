@@ -20,9 +20,23 @@ def init_db():
         CREATE TABLE IF NOT EXISTS users (
             id SERIAL PRIMARY KEY,
             name TEXT,
-            expenditures REAL,
-            food_expend REAL,
-            travel_expend REAL
+            credit_score REAL,
+            credit_age REAL,
+            monthly_dining REAL,
+            monthly_groceries REAL,
+            monthly_gas REAL,
+            monthly_streaming REAL,
+            monthly_online_shopping REAL,
+            monthly_drugstore_pharmacy REAL,
+                
+            monthly_flights REAL,
+            monthly_flights_portal REAL,
+            monthly_hotel REAL,
+            monthly_hotel_portal REAL,
+            monthly_car_rental REAL,
+            monthly_car_rental_portal REAL,
+            monthly_travel REAL,
+            monthly_other REAL
         )
     """)
     cur.execute("""
@@ -49,8 +63,18 @@ def add_user():
     data = request.json
     conn = get_db()
     cur = conn.cursor()
-    cur.execute("INSERT INTO users (name, expenditures, food_expend, travel_expend) VALUES (%s, %s, %s, %s)",
-                 (data["name"], data["expenditures"], data["food_expend"], data["travel_expend"]))
+    cur.execute("INSERT INTO users (name, credit_score, credit_age, monthly_dining," + 
+                "monthly_groceries, monthly_gas, monthly_streaming, monthly_online_shopping," + 
+                "monthly_drugstore_pharmacy, monthly_flights, monthly_flights_portal," + 
+                "monthly_hotel, monthly_hotel_portal, monthly_car, monthly_car_rental_portal," +
+                "monthly_travel, monthly_other) VALUES (%s, %s, %s, %s, %s, %s, %s, %s," +
+                "%s, %s, %s, %s, %s, %s, %s, %s, %s)",
+                 (data["name"], data["credit_score"], data["credit_age"], data["monthly_dining"],
+                  data["monthly_groceries"], data["monthly_gas"], data["monthly_streaming"],
+                  data["monthly_online_shopping"], data["monthly_drugstore_pharmacy"], data["monthly_flights"],
+                  data["monthly_flights_portal"], data["monthly_hotel"], data["monthly_hotel_portal"],
+                  data["monthly_car_rental"], data["monthly_car_rental_portal"], data["monthly_travel"],
+                  data["monthly_other"]))
     conn.commit()
     cur.close()
     conn.close()
@@ -107,9 +131,22 @@ def get_users():
             users.append({
                 "id": row[0],
                 "name": row[1],
-                "user_expend": row[2],
-                "food_expend": row[3],
-                "travel_expend": row[4]
+                "credit_score": row[2],
+                "credit_age": row[3],
+                "monthly_dining": row[4],
+                "monthly_groceries": row[5],
+                "monthly_gas": row[6],
+                "monthly_streaming": row[7],
+                "monthly_online_shopping": row[8],
+                "monthly_drugstore_pharmacy": row[9],
+                "monthly_flights": row[10],
+                "monthly_flights_portal": row[11],
+                "monthly_hotel": row[12],
+                "monthly_hotel_portal": row[13],
+                "monthly_car_rental": row[14],
+                "monthly_car_rental_portal": row[15],
+                "monthly_travel": row[16],
+                "monthly_other": row[17]
             })
 
         cur.close()
