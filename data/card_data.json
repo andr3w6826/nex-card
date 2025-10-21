@@ -13,8 +13,12 @@
             "Online_Grocery": 3,
             "Streaming": 3,
             "Travel": 2,
+            "Flights": 2,
+            "Hotel": 2,
             "Other": 1
-        }
+        },
+
+        "credits" : ["Doordash", "Travel"]
     },
 
     "American Express Gold Card": {
@@ -37,7 +41,9 @@
             "AmexTravel Hotels (Prepaid)": 2,
 
             "Other": 1
-        }
+        },
+        "credits" : ["Uber", "Resy"]
+
     },
 
     "Chase Freedom Unlimited": {
@@ -53,7 +59,8 @@
             "Dining": 3,
             "Drugstore": 3,
             "Other": 1.5
-        }
+        },
+        "credits" : ["Doordash"]
     },
 
     "Capital One Savor": {
@@ -70,7 +77,8 @@
             "Dining": 3,
             "Grocery": 3,
             "Other": 1
-        }
+        },
+        "credits" : []
     }
 
 }
