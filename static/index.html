@@ -7,35 +7,71 @@
 <body>
   <h2>Add User</h2>
   <input id="user_name" placeholder="Name">
-  <input id="user_expend" placeholder="Expenditures">
-  <input id="food_expend" placeholder="Food Expenses">
-  <input id="travel_expend" placeholder="Travel Expenses">
-  <button onclick="addUser()">Submit</button>
+  <input id="user_cred_sc" placeholder="Credit Score">
+  <input id="user_cred_age" placeholder="Credit Age">
+  
+  <h2>Input Fields</h2>
+  <input id="month_dining" placeholder="Monthly Dining">
+  <input id="month_groceries" placeholder="Monthly Groceries">
+  <input id="month_gas" placeholder="Monthly Gas">
+  <input id="month_streaming" placeholder="Monthly Streaming">
+  <input id="month_online" placeholder="Monthly Online Shopping">
+  <input id="month_drug" placeholder="Monthly Pharmacy">
+  
+  <input id="month_flight" placeholder="Monthly Flight">
+  <input id="month_flight_por" placeholder="Monthly Flight (on card portal)">
+  <input id="month_hotel" placeholder="Monthly Hotel">
+  <input id="month_hotel_por" placeholder="Monthly Hotel (on card portal)">
+  <input id="month_car" placeholder="Monthly Car Rental">
+  <input id="month_car_por" placeholder="Monthly Car Rental (on card portal)">
+  <input id="month_travel" placeholder="Monthly Travel (non-hotel, non-flight)">
+  <input id="month_other" placeholder="Monthly Other">
+  <button onclick="addUser()">Submit Info</button>
 
-  <h2>Add Item</h2>
+  <h2>Add Card</h2>
   <input id="card_name" placeholder="Card Name">
   <input id="issuer" placeholder="Card Issuer">
   <input id="annual_fee" placeholder="Annual Fee">
   <input id="purpose" placeholder="Purpose">
-  <button onclick="addCard()">Add</button>
+  <button onclick="addCard()">Add Card</button>
 
-  <h2>All Items</h2>
+  <h2>All Cards</h2>
   <button onclick="loadCards()">Refresh</button>
   <ul id="card_list"></ul>
 
+  <h2>Test User</h2>
+  <button onclick="loadUsers()">Refresh</button>
+  <ul id="user_list"></ul>
 <script>
 const API = "https://nex-card.onrender.com";  // will update after deployment
 // https://nex-card.onrender.com render url
 // http://127.0.0.1:6969 local
 async function addUser() {
   const name = document.getElementById('user_name').value;
-  const expenditures = document.getElementById('user_expend').value;
-  const food_expend = document.getElementById('food_expend').value;
-  const travel_expend = document.getElementById('travel_expend').value;
+  const credit_score = document.getElementById('user_cred_sc').value;
+  const credit_age = document.getElementById('user_cred_age').value;
+  const monthly_dining = document.getElementById('month_dining').value;
+  const monthly_groceries = document.getElementById('month_groceries').value;
+  const monthly_gas = document.getElementById('month_gas').value;
+  const monthly_streaming = document.getElementById('month_streaming').value;
+  const monthly_online_shopping = document.getElementById('month_online').value;
+  const monthly_drugstore_pharmacy = document.getElementById('month_drug').value;
+  const monthly_flights = document.getElementById('month_flight').value;
+  const monthly_flights_portal = document.getElementById('month_flight_por').value;
+  const monthly_hotel = document.getElementById('month_hotel').value;
+  const monthly_hotel_portal = document.getElementById('month_hotel_por').value;
+  const monthly_car_rental = document.getElementById('month_car').value;
+  const monthly_car_rental_portal = document.getElementById('month_car_por').value;
+  const monthly_travel = document.getElementById('month_travel').value;
+  const monthly_other = document.getElementById('month_other').value;
+
   await fetch(`${API}/add_user`, {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({name, expenditures, food_expend, travel_expend})
+    body: JSON.stringify({name, credit_score, credit_age, monthly_dining, monthly_groceries,
+    monthly_gas, monthly_streaming, monthly_online_shopping, monthly_drugstore_pharmacy,
+    monthly_flights, monthly_flights_portal, monthly_hotel, monthly_hotel_portal, 
+    monthly_car_rental, monthly_car_rental_portal, monthly_travel, monthly_other})
   });
   alert('User added!');
 }
@@ -63,6 +99,34 @@ async function loadCards() {
     li.textContent = `${i.issuer} ${i.name}, $${i.annual_fee}, ${i.purpose}`;
     list.appendChild(li);
   });
+}
+
+async function loadUsers() {
+  const res = await fetch(`${API}/users`);
+  const users = await res.json();
+  const list = document.getElementById('user_list');
+  list.innerHTML = '';
+  users.forEach(i => {
+    const li = document.createElement('li');
+    li.textContent = `Name: ${i.name}\n 
+      Credit Score and Age: ${i.credit_score}, ${i.credit_age}\n
+      \nMonthly Expenditures:\n
+      \nDining: ${i.monthly_dining}
+      \nGrocery: ${i.monthly_groceries}
+      \nGas: ${i.monthly_gas}
+      \nStreaming Services: ${i.monthly_streaming}
+      \nOnline Shopping: ${i.monthly_online_shopping}
+      \nDrugstore/Pharma: ${i.monthly_drugstore_pharmacy}
+      \nFlights: ${i.monthly_flights}
+      \nFlights (by card portal): ${i.monthly_flights_portal}
+      \nHotels: ${i.monthly_hotel}
+      \nHotels (by card portal): ${i.monthly_groceries}
+      \nCar Rentals: ${i.monthly_car_rental}
+      \nCar Rentals (by card portal): ${i.monthly_car_rental_portal}
+      \nOther Travel (non-flight, non-hotel): ${i.monthly_travel}
+      \nCar Rentals (by card portal): ${i.monthly_other}`;
+    list.appendChild(li);
+  })
 }
 </script>
 </body>
