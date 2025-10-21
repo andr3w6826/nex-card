@@ -66,7 +66,7 @@ def add_user():
     cur.execute("INSERT INTO users (name, credit_score, credit_age, monthly_dining," + 
                 "monthly_groceries, monthly_gas, monthly_streaming, monthly_online_shopping," + 
                 "monthly_drugstore_pharmacy, monthly_flights, monthly_flights_portal," + 
-                "monthly_hotel, monthly_hotel_portal, monthly_car_portal, monthly_car_rental_portal," +
+                "monthly_hotel, monthly_hotel_portal, monthly_car_rental, monthly_car_rental_portal," +
                 "monthly_travel, monthly_other) VALUES (%s, %s, %s, %s, %s, %s, %s, %s," +
                 "%s, %s, %s, %s, %s, %s, %s, %s, %s)",
                  (data["name"], data["credit_score"], data["credit_age"], data["monthly_dining"],
